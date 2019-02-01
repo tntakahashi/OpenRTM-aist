@@ -241,7 +241,11 @@ namespace RTC
      * @endif
      */
     virtual ::OpenRTM::PortStatus get(::OpenRTM::CdrData_out data)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
 
   private:

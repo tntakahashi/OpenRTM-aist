@@ -234,7 +234,11 @@ namespace RTC
      * @endif
      */
     virtual PortProfile* get_port_profile()
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -316,7 +320,11 @@ namespace RTC
      * @endif
      */
     virtual ConnectorProfileList* get_connector_profiles()
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -358,7 +366,11 @@ namespace RTC
      * @endif
      */
     virtual ConnectorProfile* get_connector_profile(const char* connector_id)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -518,7 +530,11 @@ namespace RTC
      * @endif
      */
     virtual ReturnCode_t connect(ConnectorProfile& connector_profile)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -636,7 +652,11 @@ namespace RTC
      * @endif
      */
     virtual ReturnCode_t notify_connect(ConnectorProfile& connector_profile)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -704,7 +724,11 @@ namespace RTC
      * @endif
      */
     virtual ReturnCode_t disconnect(const char* connector_id)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -795,7 +819,11 @@ namespace RTC
      * @endif
      */
     virtual ReturnCode_t notify_disconnect(const char* connector_id)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -817,7 +845,12 @@ namespace RTC
      * @endif
      */
     virtual ReturnCode_t disconnect_all()
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
+
 
     //============================================================
     // Local operations

@@ -239,7 +239,11 @@ namespace RTC
      * @endif
      */
     virtual ::RTC::PortStatus pull(::RTC::OctetSeq_out data)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
 
   private:

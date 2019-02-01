@@ -107,7 +107,9 @@ namespace RTC
    */
   void CorbaNaming::bind(const CosNaming::Name& name, CORBA::Object_ptr obj,
                          const bool force)
+#if __cplusplus < 201703L
     throw (SystemException, NotFound, CannotProceed, InvalidName, AlreadyBound)
+#endif
   {
     try
       {
@@ -136,7 +138,9 @@ namespace RTC
    */
   void CorbaNaming::bindByString(const char* string_name, CORBA::Object_ptr obj,
                                  const bool force)
+#if __cplusplus < 201703L
     throw (SystemException, NotFound, CannotProceed, InvalidName, AlreadyBound)
+#endif
   {
     this->bind(toName(string_name), obj, force);
   }
@@ -151,7 +155,9 @@ namespace RTC
   void CorbaNaming::bindRecursive(CosNaming::NamingContext_ptr context,
                                   const CosNaming::Name& name,
                                   CORBA::Object_ptr obj)
+#if __cplusplus < 201703L
     throw (SystemException, CannotProceed, InvalidName, AlreadyBound)
+#endif
   {
     CORBA::ULong len(name.length());
     CosNaming::NamingContext_var cxt;
@@ -185,7 +191,9 @@ namespace RTC
   void CorbaNaming::rebind(const CosNaming::Name& name,
                            CORBA::Object_ptr obj,
                            const bool force)
+#if __cplusplus < 201703L
     throw (SystemException, NotFound, CannotProceed, InvalidName)
+#endif
   {
     try
       {
@@ -215,7 +223,9 @@ namespace RTC
   void CorbaNaming::rebindByString(const char* string_name,
                                    CORBA::Object_ptr obj,
                                    const bool force)
+#if __cplusplus < 201703L
     throw (SystemException, NotFound, CannotProceed, InvalidName)
+#endif
   {
     rebind(toName(string_name), obj, force);
   }
@@ -230,7 +240,9 @@ namespace RTC
   void CorbaNaming::rebindRecursive(CosNaming::NamingContext_ptr context,
                                     const CosNaming::Name& name,
                                     CORBA::Object_ptr obj)
+#if __cplusplus < 201703L
     throw (SystemException, CannotProceed, InvalidName)
+#endif
   {
     CORBA::ULong len(name.length());
     CosNaming::NamingContext_var cxt;
@@ -276,7 +288,9 @@ namespace RTC
   void CorbaNaming::bindContext(const CosNaming::Name& name,
                                 CosNaming::NamingContext_ptr name_cxt,
                                 const bool force)
+#if __cplusplus < 201703L
     throw (SystemException, NotFound, CannotProceed, InvalidName, AlreadyBound)
+#endif
   {
     bind(name, name_cxt, force);
   }
@@ -291,7 +305,9 @@ namespace RTC
   void CorbaNaming::bindContext(const char* string_name,
                                 CosNaming::NamingContext_ptr name_cxt,
                                 const bool force)
+#if __cplusplus < 201703L
     throw (SystemException, NotFound, CannotProceed, InvalidName, AlreadyBound)
+#endif
   {
     bindContext(toName(string_name), name_cxt, force);
   }
@@ -322,7 +338,9 @@ namespace RTC
   void CorbaNaming::rebindContext(const CosNaming::Name& name,
                                   CosNaming::NamingContext_ptr name_cxt,
                                   const bool force)
+#if __cplusplus < 201703L
     throw (SystemException, NotFound, CannotProceed, InvalidName)
+#endif
   {
     rebind(name, name_cxt, force);
     return;
@@ -338,7 +356,9 @@ namespace RTC
   void CorbaNaming::rebindContext(const char* string_name,
                                   CosNaming::NamingContext_ptr name_cxt,
                                   const bool force)
+#if __cplusplus < 201703L
     throw (SystemException, NotFound, CannotProceed, InvalidName)
+#endif
   {
     rebindContext(toName(string_name), name_cxt, force);
   }
@@ -367,7 +387,9 @@ namespace RTC
    * @endif
    */
   CORBA::Object_ptr CorbaNaming::resolve(const CosNaming::Name& name)
+#if __cplusplus < 201703L
     throw (SystemException, NotFound, CannotProceed, InvalidName)
+#endif
   {
     return m_rootContext->resolve(name);
   }
@@ -380,7 +402,9 @@ namespace RTC
    * @endif
    */
   CORBA::Object_ptr CorbaNaming::resolve(const char* string_name)
+#if __cplusplus < 201703L
     throw (SystemException, NotFound, CannotProceed, InvalidName)
+#endif
   {
     return resolve(toName(string_name));
   }
@@ -393,7 +417,9 @@ namespace RTC
    * @endif
    */
   void CorbaNaming::unbind(const CosNaming::Name& name)
+#if __cplusplus < 201703L
     throw (SystemException, NotFound, CannotProceed, InvalidName)
+#endif
   {
     m_rootContext->unbind(name);
   }
@@ -406,7 +432,9 @@ namespace RTC
    * @endif
    */
   void CorbaNaming::unbind(const char* string_name)
+#if __cplusplus < 201703L
     throw (SystemException, NotFound, CannotProceed, InvalidName)
+#endif
   {
     unbind(toName(string_name));
   }
@@ -432,7 +460,9 @@ namespace RTC
    */
   CosNaming::NamingContext_ptr
   CorbaNaming::bindNewContext(const CosNaming::Name& name, bool force)
+#if __cplusplus < 201703L
     throw (SystemException, NotFound, CannotProceed, InvalidName, AlreadyBound)
+#endif
   {
     try
       {
@@ -463,7 +493,9 @@ namespace RTC
    */
   CosNaming::NamingContext_ptr
   CorbaNaming::bindNewContext(const char* string_name, bool force)
+#if __cplusplus < 201703L
     throw (SystemException, NotFound, CannotProceed, InvalidName, AlreadyBound)
+#endif
   {
     return bindNewContext(toName(string_name));
   }
@@ -476,7 +508,9 @@ namespace RTC
    * @endif
    */
   void CorbaNaming::destroy(CosNaming::NamingContext_ptr context)
+#if __cplusplus < 201703L
     throw (SystemException, NotEmpty)
+#endif
   {
     context->destroy();
   }
@@ -489,7 +523,9 @@ namespace RTC
    * @endif
    */
   void CorbaNaming::destroyRecursive(CosNaming::NamingContext_ptr context)
+#if __cplusplus < 201703L
     throw (SystemException, NotEmpty, NotFound, CannotProceed, InvalidName)
+#endif
   {
     CosNaming::BindingList_var     bl;
     CosNaming::BindingIterator_var bi;
@@ -673,7 +709,9 @@ namespace RTC
    * @endif
    */
   char* CorbaNaming::toString(const CosNaming::Name& name)
+#if __cplusplus < 201703L
     throw (SystemException, InvalidName)
+#endif
   {
     if (name.length() == 0)
       throw InvalidName();
@@ -695,7 +733,9 @@ namespace RTC
    * @endif
    */
   CosNaming::Name CorbaNaming::toName(const char* sname)
+#if __cplusplus < 201703L
     throw (SystemException, InvalidName)
+#endif
   {
     if (!sname)         throw InvalidName();
     if (*sname == '\0') throw InvalidName();
@@ -745,7 +785,9 @@ namespace RTC
    * @endif
    */
   char* CorbaNaming::toUrl(char* addr, char* string_name)
+#if __cplusplus < 201703L
     throw (SystemException, InvalidAddress, InvalidName)
+#endif
   {
     return m_rootContext->to_url(addr, string_name);
   }
@@ -758,7 +800,9 @@ namespace RTC
    * @endif
    */
   CORBA::Object_ptr CorbaNaming::resolveStr(const char* string_name)
+#if __cplusplus < 201703L
     throw (SystemException, NotFound, CannotProceed, InvalidName, AlreadyBound)
+#endif
   {
     return resolve(string_name);
   }

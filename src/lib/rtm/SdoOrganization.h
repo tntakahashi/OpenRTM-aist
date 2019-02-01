@@ -152,8 +152,12 @@ namespace SDOPackage
      * @endif
      */
     virtual char* get_organization_id()
+#if __cplusplus < 201703L
       throw (CORBA::SystemException,
              InvalidParameter, NotAvailable, InternalError);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -199,8 +203,12 @@ namespace SDOPackage
      */
     virtual CORBA::Boolean
     add_organization_property(const OrganizationProperty& org_property)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException,
              InvalidParameter, NotAvailable, InternalError);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -235,8 +243,12 @@ namespace SDOPackage
      * @endif
      */
     virtual OrganizationProperty* get_organization_property()
+#if __cplusplus < 201703L
       throw (CORBA::SystemException,
              NotAvailable, InternalError);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -278,8 +290,12 @@ namespace SDOPackage
      * @endif
      */
     virtual CORBA::Any* get_organization_property_value(const char* name)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException,
              InvalidParameter, NotAvailable, InternalError);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -327,8 +343,12 @@ namespace SDOPackage
      */
     virtual CORBA::Boolean
     set_organization_property_value(const char* name, const CORBA::Any& value)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException,
              InvalidParameter, NotAvailable, InternalError);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -371,8 +391,12 @@ namespace SDOPackage
      * @endif
      */
     virtual CORBA::Boolean remove_organization_property(const char* name)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException,
              InvalidParameter, NotAvailable, InternalError);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -412,8 +436,12 @@ namespace SDOPackage
      * @endif
      */
     virtual CORBA::Boolean add_members(const SDOList& sdo_list)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException,
              InvalidParameter, NotAvailable, InternalError);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -448,8 +476,12 @@ namespace SDOPackage
      * @endif
      */
     virtual SDOList* get_members()
+#if __cplusplus < 201703L
       throw (CORBA::SystemException,
              NotAvailable, InternalError);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -495,8 +527,12 @@ namespace SDOPackage
      * @endif
      */
     virtual CORBA::Boolean set_members(const SDOList& sdos)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException,
              InvalidParameter, NotAvailable, InternalError);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -535,8 +571,12 @@ namespace SDOPackage
      * @endif
      */
     virtual CORBA::Boolean remove_member(const char* id)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException,
              InvalidParameter, NotAvailable, InternalError);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -569,8 +609,12 @@ namespace SDOPackage
      * @endif
      */
     virtual SDOSystemElement_ptr get_owner()
+#if __cplusplus < 201703L
       throw (CORBA::SystemException,
              NotAvailable, InternalError);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -614,8 +658,12 @@ namespace SDOPackage
      * @endif
      */
     virtual CORBA::Boolean set_owner(SDOSystemElement_ptr sdo)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException,
              InvalidParameter, NotAvailable, InternalError);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -653,8 +701,12 @@ namespace SDOPackage
      * @endif
      */
     virtual DependencyType get_dependency()
+#if __cplusplus < 201703L
       throw (CORBA::SystemException,
              NotAvailable, InternalError);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -699,8 +751,12 @@ namespace SDOPackage
      * @endif
      */
     virtual CORBA::Boolean set_dependency(DependencyType dependency)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException,
              NotAvailable, InternalError);
+#else
+    ;
+#endif
 
     // end of CORBA interface definition
     //============================================================

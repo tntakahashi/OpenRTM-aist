@@ -151,7 +151,9 @@ namespace RTC
    */
   ::OpenRTM::PortStatus
   InPortCorbaCdrProvider::put(const ::OpenRTM::CdrData& data)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     RTC_PARANOID(("InPortCorbaCdrProvider::put()"));
 

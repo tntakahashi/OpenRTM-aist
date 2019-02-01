@@ -1,2 +1,6 @@
 src/lib/coil/common/coil
 utils/rtm-skelwrapper
+
+#src/lib/coil/posix/coil/config_coil.h
+#src/lib/rtm/config_rtc.h
+#src/lib/rtm/version.h

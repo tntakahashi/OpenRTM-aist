@@ -163,7 +163,9 @@ namespace RTC
    */
   ::OpenRTM::PortStatus
   OutPortCorbaCdrProvider::get(::OpenRTM::CdrData_out data)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     RTC_PARANOID(("OutPortCorbaCdrProvider::get()"));
     // at least the output "data" area should be allocated

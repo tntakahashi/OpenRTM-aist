@@ -297,7 +297,11 @@ namespace RTC_exp
      * @endif
      */
     virtual CORBA::Boolean is_running(void)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -327,7 +331,11 @@ namespace RTC_exp
      * @endif
      */
     virtual RTC::ReturnCode_t start(void)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -356,7 +364,11 @@ namespace RTC_exp
      * @endif
      */
     virtual RTC::ReturnCode_t stop(void)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -379,7 +391,11 @@ namespace RTC_exp
      * @endif
      */
     virtual CORBA::Double get_rate(void)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -411,7 +427,11 @@ namespace RTC_exp
      * @endif
      */
     virtual RTC::ReturnCode_t  set_rate(CORBA::Double rate)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -448,7 +468,11 @@ namespace RTC_exp
      */
     virtual RTC::ReturnCode_t
     activate_component(RTC::LightweightRTObject_ptr comp)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -484,7 +508,11 @@ namespace RTC_exp
      */
     virtual RTC::ReturnCode_t
     deactivate_component(RTC::LightweightRTObject_ptr comp)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -519,7 +547,11 @@ namespace RTC_exp
      */
     virtual RTC::ReturnCode_t
     reset_component(RTC::LightweightRTObject_ptr comp)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -549,7 +581,11 @@ namespace RTC_exp
      */
     virtual RTC::LifeCycleState
     get_component_state(RTC::LightweightRTObject_ptr comp)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -571,7 +607,11 @@ namespace RTC_exp
      * @endif
      */
     virtual RTC::ExecutionKind get_kind(void)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -606,7 +646,11 @@ namespace RTC_exp
      */
     virtual RTC::ReturnCode_t
     add_component(RTC::LightweightRTObject_ptr comp)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -639,7 +683,11 @@ namespace RTC_exp
      */
     virtual RTC::ReturnCode_t
     remove_component(RTC::LightweightRTObject_ptr comp)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -661,7 +709,11 @@ namespace RTC_exp
      * @endif
      */
     virtual RTC::ExecutionContextProfile* get_profile(void)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
   protected:
     /*!

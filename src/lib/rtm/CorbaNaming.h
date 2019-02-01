@@ -254,8 +254,12 @@ namespace RTC
      */
     void bind(const CosNaming::Name& name, CORBA::Object_ptr obj,
               const bool force = 1)
+#if __cplusplus < 201703L
       throw (SystemException, NotFound, CannotProceed,
              InvalidName, AlreadyBound);
+#else 
+    ;
+#endif
 
     /*!
      * @if jp
@@ -297,8 +301,12 @@ namespace RTC
      */
     void bindByString(const char* string_name, CORBA::Object_ptr obj,
                       const bool force = 1)
+#if __cplusplus < 201703L
       throw (SystemException, NotFound, CannotProceed,
              InvalidName, AlreadyBound);
+#else 
+    ;
+#endif
 
     /*!
      * @if jp
@@ -363,7 +371,11 @@ namespace RTC
     void bindRecursive(CosNaming::NamingContext_ptr context,
                        const CosNaming::Name& name,
                        CORBA::Object_ptr obj)
+#if __cplusplus < 201703L 
       throw (SystemException, CannotProceed, InvalidName, AlreadyBound);
+#else 
+    ;
+#endif
 
     /*!
      * @if jp
@@ -404,7 +416,11 @@ namespace RTC
      */
     void rebind(const CosNaming::Name& name, CORBA::Object_ptr obj,
                 const bool force = 1)
+#if __cplusplus < 201703L
       throw (SystemException, NotFound, CannotProceed, InvalidName);
+#else 
+    ;
+#endif
 
     /*!
      * @if jp
@@ -444,7 +460,11 @@ namespace RTC
      */
     void rebindByString(const char* string_name, CORBA::Object_ptr obj,
                         const bool force = 1)
+#if __cplusplus < 201703L
       throw (SystemException, NotFound, CannotProceed, InvalidName);
+#else 
+    ;
+#endif
 
     /*!
      * @if jp
@@ -486,7 +506,11 @@ namespace RTC
     void rebindRecursive(CosNaming::NamingContext_ptr context,
                          const CosNaming::Name& name,
                          CORBA::Object_ptr obj)
+#if __cplusplus < 201703L
       throw (SystemException, CannotProceed, InvalidName);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -527,8 +551,12 @@ namespace RTC
     void bindContext(const CosNaming::Name& name,
                      CosNaming::NamingContext_ptr name_cxt,
                      const bool force = 1)
+#if __cplusplus < 201703L
       throw (SystemException, NotFound, CannotProceed,
              InvalidName, AlreadyBound);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -570,8 +598,12 @@ namespace RTC
     void bindContext(const char* string_name,
                      CosNaming::NamingContext_ptr name_cxt,
                      const bool force = 1)
+#if __cplusplus < 201703L
       throw (SystemException, NotFound, CannotProceed,
              InvalidName, AlreadyBound);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -643,7 +675,11 @@ namespace RTC
     void rebindContext(const CosNaming::Name& name,
                        CosNaming::NamingContext_ptr name_cxt,
                        const bool force = 1)
+#if __cplusplus < 201703L
       throw (SystemException, NotFound, CannotProceed, InvalidName);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -686,7 +722,11 @@ namespace RTC
     void rebindContext(const char* string_name,
                        CosNaming::NamingContext_ptr name_cxt,
                        const bool force = 1)
+#if __cplusplus < 201703L
       throw (SystemException, NotFound, CannotProceed, InvalidName);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -759,7 +799,11 @@ namespace RTC
      * @endif
      */
     CORBA::Object_ptr resolve(const CosNaming::Name& name)
+#if __cplusplus < 201703L
       throw (SystemException, NotFound, CannotProceed, InvalidName);
+#else 
+    ;
+#endif
 
     /*!
      * @if jp
@@ -804,7 +848,11 @@ namespace RTC
      * @endif
      */
     CORBA::Object_ptr resolve(const char* string_name)
+#if __cplusplus < 201703L
       throw (SystemException, NotFound, CannotProceed, InvalidName);
+#else 
+    ;
+#endif
 
     /*!
      * @if jp
@@ -844,7 +892,11 @@ namespace RTC
      * @endif
      */
     void unbind(const CosNaming::Name& name)
+#if __cplusplus < 201703L
       throw (SystemException, NotFound, CannotProceed, InvalidName);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -889,7 +941,11 @@ namespace RTC
      * @endif
      */
     void unbind(const char* string_name)
+#if __cplusplus < 201703L
       throw (SystemException, NotFound, CannotProceed, InvalidName);
+#else 
+    ;
+#endif
 
     /*!
      * @if jp
@@ -955,8 +1011,12 @@ namespace RTC
      */
     CosNaming::NamingContext_ptr
     bindNewContext(const CosNaming::Name& name, bool force = true)
+#if __cplusplus < 201703L
       throw (SystemException, NotFound, CannotProceed,
              InvalidName, AlreadyBound);
+#else 
+    ;
+#endif
 
     /*!
      * @if jp
@@ -1000,8 +1060,12 @@ namespace RTC
      */
     CosNaming::NamingContext_ptr
     bindNewContext(const char* string_name, bool force = true)
+#if __cplusplus < 201703L
       throw (SystemException, NotFound, CannotProceed,
              InvalidName, AlreadyBound);
+#else 
+    ;
+#endif
 
     /*!
      * @if jp
@@ -1031,7 +1095,11 @@ namespace RTC
      * @endif
      */
     void destroy(CosNaming::NamingContext_ptr context)
+#if __cplusplus < 201703L
       throw (SystemException, NotEmpty);
+#else 
+    ;
+#endif
 
     /*!
      * @if jp
@@ -1065,7 +1133,11 @@ namespace RTC
      * @endif
      */
     void destroyRecursive(CosNaming::NamingContext_ptr context)
+#if __cplusplus < 201703L
       throw (SystemException, NotEmpty, NotFound, CannotProceed, InvalidName);
+#else 
+    ;
+#endif
 
     /*!
      * @if jp
@@ -1227,7 +1299,11 @@ namespace RTC
      * @endif
      */
     char* toString(const CosNaming::Name& name)
+#if __cplusplus < 201703L
       throw (SystemException, InvalidName);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -1255,7 +1331,11 @@ namespace RTC
      * @endif
      */
     CosNaming::Name toName(const char* string_name)
+#if __cplusplus < 201703L
       throw (SystemException, InvalidName);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -1287,7 +1367,11 @@ namespace RTC
      * @endif
      */
     char* toUrl(char* addr, char* string_name)
+#if __cplusplus < 201703L
       throw (SystemException, InvalidAddress, InvalidName);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -1321,8 +1405,12 @@ namespace RTC
      * @endif
      */
     CORBA::Object_ptr resolveStr(const char* string_name)
+#if __cplusplus < 201703L
       throw (SystemException, NotFound, CannotProceed,
              InvalidName, AlreadyBound);
+#else
+    ;
+#endif
 
     //============================================================
     // Find functions

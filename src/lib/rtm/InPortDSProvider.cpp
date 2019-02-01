@@ -149,7 +149,9 @@ namespace RTC
    */
   ::RTC::PortStatus
   InPortDSProvider::push(const ::RTC::OctetSeq& data)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     RTC_PARANOID(("InPortDSProvider::push()"));
 

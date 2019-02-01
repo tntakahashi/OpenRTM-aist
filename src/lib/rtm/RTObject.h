@@ -618,7 +618,11 @@ namespace RTC
      * @endif
      */
     virtual ReturnCode_t initialize()
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -666,7 +670,11 @@ namespace RTC
      * @endif
      */
     virtual ReturnCode_t finalize()
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else 
+    ;
+#endif
 
     /*!
      * @if jp
@@ -712,7 +720,11 @@ namespace RTC
      * @endif
      */
     virtual ReturnCode_t exit()
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -748,7 +760,11 @@ namespace RTC
      * @endif
      */
     virtual CORBA::Boolean is_alive(ExecutionContext_ptr exec_context)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -778,7 +794,11 @@ namespace RTC
      * @endif
      */
     virtual ExecutionContext_ptr get_context(UniqueId exec_handle)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -799,7 +819,11 @@ namespace RTC
      * @endif
      */
     virtual ExecutionContextList* get_owned_contexts()
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -820,7 +844,11 @@ namespace RTC
      * @endif
      */
     virtual ExecutionContextList* get_participating_contexts()
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -838,7 +866,11 @@ namespace RTC
      */
     virtual ExecutionContextHandle_t
     get_context_handle(ExecutionContext_ptr cxt)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -871,7 +903,11 @@ namespace RTC
      * @endif
      */
     UniqueId attach_context(ExecutionContext_ptr exec_context)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
     UniqueId bindContext(ExecutionContext_ptr exec_context);
 
@@ -917,7 +953,11 @@ namespace RTC
      * @endif
      */
     ReturnCode_t detach_context(UniqueId exec_handle)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
     //============================================================
     // RTC::RTObject
@@ -942,7 +982,11 @@ namespace RTC
      * @endif
      */
     virtual ComponentProfile* get_component_profile()
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -964,7 +1008,11 @@ namespace RTC
      * @endif
      */
     virtual PortServiceList* get_ports()
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -1019,7 +1067,11 @@ namespace RTC
      * @endif
      */
     virtual ReturnCode_t on_initialize()
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -1046,7 +1098,11 @@ namespace RTC
      * @endif
      */
     virtual ReturnCode_t on_finalize()
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -1077,7 +1133,11 @@ namespace RTC
      * @endif
      */
     virtual ReturnCode_t on_startup(UniqueId exec_handle)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -1108,7 +1168,11 @@ namespace RTC
      * @endif
      */
     virtual ReturnCode_t on_shutdown(UniqueId exec_handle)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -1137,7 +1201,11 @@ namespace RTC
      * @endif
      */
     virtual ReturnCode_t on_activated(UniqueId exec_handle)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -1167,7 +1235,11 @@ namespace RTC
      * @endif
      */
     virtual ReturnCode_t on_deactivated(UniqueId exec_handle)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -1202,7 +1274,11 @@ namespace RTC
      * @endif
      */
     virtual ReturnCode_t on_aborting(UniqueId exec_handle)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -1248,7 +1324,11 @@ namespace RTC
      * @endif
      */
     virtual ReturnCode_t on_error(UniqueId exec_handle)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -1285,7 +1365,11 @@ namespace RTC
      * @endif
      */
     virtual ReturnCode_t on_reset(UniqueId exec_handle)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
     //============================================================
     // RTC::DataFlowComponentAction
@@ -1333,7 +1417,11 @@ namespace RTC
      * @endif
      */
     virtual ReturnCode_t on_execute(UniqueId exec_handle)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -1379,7 +1467,11 @@ namespace RTC
      * @endif
      */
     virtual ReturnCode_t on_state_update(UniqueId exec_handle)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -1418,7 +1510,11 @@ namespace RTC
      * @endif
      */
     virtual ReturnCode_t on_rate_changed(UniqueId exec_handle)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
     //============================================================
     // SDOPackage::SdoSystemElement
@@ -1461,8 +1557,12 @@ namespace RTC
      * @endif
      */
     virtual SDOPackage::OrganizationList* get_owned_organizations()
+#if __cplusplus < 201703L
       throw (CORBA::SystemException,
              SDOPackage::NotAvailable, SDOPackage::InternalError);
+#else
+    ;
+#endif
 
     //============================================================
     // SDOPackage::SDO
@@ -1501,8 +1601,12 @@ namespace RTC
      * @endif
      */
     virtual char* get_sdo_id()
+#if __cplusplus < 201703L
       throw (CORBA::SystemException,
              SDOPackage::NotAvailable, SDOPackage::InternalError);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -1538,8 +1642,12 @@ namespace RTC
      * @endif
      */
     virtual char* get_sdo_type()
+#if __cplusplus < 201703L
       throw (CORBA::SystemException,
              SDOPackage::NotAvailable, SDOPackage::InternalError);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -1578,8 +1686,12 @@ namespace RTC
      * @endif
      */
     virtual SDOPackage::DeviceProfile* get_device_profile()
+#if __cplusplus < 201703L
       throw (CORBA::SystemException,
              SDOPackage::NotAvailable, SDOPackage::InternalError);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -1618,8 +1730,12 @@ namespace RTC
      * @endif
      */
     virtual SDOPackage::ServiceProfileList* get_service_profiles()
+#if __cplusplus < 201703L
       throw (CORBA::SystemException,
              SDOPackage::NotAvailable, SDOPackage::InternalError);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -1663,9 +1779,13 @@ namespace RTC
      * @endif
      */
     virtual SDOPackage::ServiceProfile* get_service_profile(const char* id)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException,
              SDOPackage::InvalidParameter, SDOPackage::NotAvailable,
              SDOPackage::InternalError);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -1715,9 +1835,13 @@ namespace RTC
      * @endif
      */
     virtual SDOPackage::SDOService_ptr get_sdo_service(const char* id)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException,
              SDOPackage::InvalidParameter, SDOPackage::NotAvailable,
              SDOPackage::InternalError);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -1764,9 +1888,13 @@ namespace RTC
      * @endif
      */
     virtual SDOPackage::Configuration_ptr get_configuration()
+#if __cplusplus < 201703L
       throw (CORBA::SystemException,
              SDOPackage::InterfaceNotImplemented, SDOPackage::NotAvailable,
              SDOPackage::InternalError);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -1812,9 +1940,13 @@ namespace RTC
      * @endif
      */
     virtual SDOPackage::Monitoring_ptr get_monitoring()
+#if __cplusplus < 201703L
       throw (CORBA::SystemException,
              SDOPackage::InterfaceNotImplemented, SDOPackage::NotAvailable,
              SDOPackage::InternalError);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -1852,8 +1984,12 @@ namespace RTC
      * @endif
      */
     virtual SDOPackage::OrganizationList* get_organizations()
+#if __cplusplus < 201703L
       throw (CORBA::SystemException,
              SDOPackage::NotAvailable, SDOPackage::InternalError);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -1887,8 +2023,12 @@ namespace RTC
      * @endif
      */
     virtual SDOPackage::NVList* get_status_list()
+#if __cplusplus < 201703L
       throw (CORBA::SystemException,
              SDOPackage::NotAvailable, SDOPackage::InternalError);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -1927,9 +2067,13 @@ namespace RTC
      * @endif
      */
     virtual CORBA::Any* get_status(const char* name)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException,
              SDOPackage::InvalidParameter, SDOPackage::NotAvailable,
              SDOPackage::InternalError);
+#else
+    ;
+#endif
 
     //============================================================
     // Local interfaces

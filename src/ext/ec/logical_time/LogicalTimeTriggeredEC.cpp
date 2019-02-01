@@ -195,7 +195,9 @@ namespace RTC
    */
   void LogicalTimeTriggeredEC::
   tick(::CORBA::ULong sec, ::CORBA::ULong usec)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     RTC_TRACE(("tick(sec = %d, usec = %d)", sec, usec));
     coil::TimeValue time(sec, usec);
@@ -225,7 +227,9 @@ namespace RTC
   
   void LogicalTimeTriggeredEC::
   get_time(::CORBA::ULong& sec, ::CORBA::ULong& usec)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     coil::TimeValue time(m_clock.gettime());
     sec  = time.sec();
@@ -243,7 +247,9 @@ namespace RTC
    * @endif
    */
   CORBA::Boolean LogicalTimeTriggeredEC::is_running()
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     return ExecutionContextBase::isRunning();
   }
@@ -256,7 +262,9 @@ namespace RTC
    * @endif
    */
   RTC::ReturnCode_t LogicalTimeTriggeredEC::start()
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     return ExecutionContextBase::start();
   }
@@ -269,7 +277,9 @@ namespace RTC
    * @endif
    */
   RTC::ReturnCode_t LogicalTimeTriggeredEC::stop()
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     return ExecutionContextBase::stop();
   }
@@ -284,7 +294,9 @@ namespace RTC
    * @endif
    */
   CORBA::Double LogicalTimeTriggeredEC::get_rate()
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     return ExecutionContextBase::getRate();
   }
@@ -297,7 +309,9 @@ namespace RTC
    * @endif
    */
   RTC::ReturnCode_t LogicalTimeTriggeredEC::set_rate(CORBA::Double rate)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     return ExecutionContextBase::setRate(rate);
   }
@@ -311,7 +325,9 @@ namespace RTC
    */
   RTC::ReturnCode_t
   LogicalTimeTriggeredEC::add_component(RTC::LightweightRTObject_ptr comp)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     return ExecutionContextBase::addComponent(comp);
   }
@@ -325,7 +341,9 @@ namespace RTC
    */
   RTC::ReturnCode_t LogicalTimeTriggeredEC::
   remove_component(RTC::LightweightRTObject_ptr comp)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     return ExecutionContextBase::removeComponent(comp);
   }
@@ -339,7 +357,9 @@ namespace RTC
    */
   RTC::ReturnCode_t LogicalTimeTriggeredEC::
   activate_component(RTC::LightweightRTObject_ptr comp)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     return ExecutionContextBase::activateComponent(comp);
   }
@@ -353,7 +373,9 @@ namespace RTC
    */
   RTC::ReturnCode_t LogicalTimeTriggeredEC::
   deactivate_component(RTC::LightweightRTObject_ptr comp)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     return ExecutionContextBase::deactivateComponent(comp);
   }
@@ -367,7 +389,9 @@ namespace RTC
    */
   RTC::ReturnCode_t LogicalTimeTriggeredEC::
   reset_component(RTC::LightweightRTObject_ptr comp)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     return ExecutionContextBase::resetComponent(comp);
   }
@@ -381,7 +405,9 @@ namespace RTC
    */
   RTC::LifeCycleState LogicalTimeTriggeredEC::
   get_component_state(RTC::LightweightRTObject_ptr comp)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     return ExecutionContextBase::getComponentState(comp);
   }
@@ -394,7 +420,9 @@ namespace RTC
    * @endif
    */
   RTC::ExecutionKind LogicalTimeTriggeredEC::get_kind()
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     return ExecutionContextBase::getKind();
   }
@@ -410,7 +438,9 @@ namespace RTC
    * @endif
    */
   RTC::ExecutionContextProfile* LogicalTimeTriggeredEC::get_profile()
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     return ExecutionContextBase::getProfile();
   }

@@ -314,7 +314,9 @@ namespace RTC
    * @endif
    */
   ReturnCode_t RTObject_impl::initialize()
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     RTC_TRACE(("initialize()"));
 
@@ -365,7 +367,9 @@ namespace RTC
    * @endif
    */
   ReturnCode_t RTObject_impl::finalize()
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     RTC_TRACE(("finalize()"));
     if (m_created)  { return RTC::PRECONDITION_NOT_MET; }
@@ -402,7 +406,9 @@ namespace RTC
    * @endif
    */
   ReturnCode_t RTObject_impl::exit()
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     RTC_TRACE(("exit()"));
     if (m_created) { return RTC::PRECONDITION_NOT_MET; }
@@ -449,7 +455,9 @@ namespace RTC
    * @endif
    */
   CORBA::Boolean RTObject_impl::is_alive(ExecutionContext_ptr exec_context)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     RTC_TRACE(("is_alive()"));
     for (::CORBA::ULong i(0), len(m_ecMine.length()); i < len; ++i)
@@ -477,7 +485,9 @@ namespace RTC
    * @endif
    */
   ExecutionContext_ptr RTObject_impl::get_context(UniqueId ec_id)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     RTC_TRACE(("get_context(%d)", ec_id));
     // owned EC
@@ -515,7 +525,9 @@ namespace RTC
    * @endif
    */
   ExecutionContextList* RTObject_impl::get_owned_contexts()
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     RTC_TRACE(("get_owned_context()"));
 
@@ -552,7 +564,9 @@ namespace RTC
    * @endif
    */
   ExecutionContextList* RTObject_impl::get_participating_contexts()
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     RTC_TRACE(("get_participating_contexts()"));
     ExecutionContextList_var execlist;
@@ -573,7 +587,9 @@ namespace RTC
    */
   ExecutionContextHandle_t
   RTObject_impl::get_context_handle(ExecutionContext_ptr cxt)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     RTC_TRACE(("get_context_handle()"));
     CORBA::Long num;
@@ -599,7 +615,9 @@ namespace RTC
    * @endif
    */
   UniqueId RTObject_impl::attach_context(ExecutionContext_ptr exec_context)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     RTC_TRACE(("attach_context()"));
     // ID: 0 - (offset-1) : owned ec
@@ -676,7 +694,9 @@ namespace RTC
    * @endif
    */
   ReturnCode_t RTObject_impl::detach_context(UniqueId ec_id)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     RTC_TRACE(("detach_context(%d)", ec_id));
     ::CORBA::ULong len(m_ecOther.length());
@@ -714,7 +734,9 @@ namespace RTC
    * @endif
    */
   ComponentProfile* RTObject_impl::get_component_profile()
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     RTC_TRACE(("get_component_profile()"));
     try
@@ -769,7 +791,9 @@ namespace RTC
    * @endif
    */
   PortServiceList* RTObject_impl::get_ports()
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     RTC_TRACE(("get_ports()"));
     try
@@ -795,7 +819,9 @@ namespace RTC
    * @endif
    */
   ReturnCode_t RTObject_impl::on_initialize()
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     RTC_TRACE(("on_initialize()"));
     ReturnCode_t ret(RTC::RTC_ERROR);
@@ -850,7 +876,9 @@ namespace RTC
    * @endif
    */
   ReturnCode_t RTObject_impl::on_finalize()
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     RTC_TRACE(("on_finalize()"));
     ReturnCode_t ret(RTC::RTC_ERROR);
@@ -875,7 +903,9 @@ namespace RTC
    * @endif
    */
   ReturnCode_t RTObject_impl::on_startup(UniqueId ec_id)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     RTC_TRACE(("on_startup(%d)", ec_id));
     ReturnCode_t ret(RTC::RTC_ERROR);
@@ -900,7 +930,9 @@ namespace RTC
    * @endif
    */
   ReturnCode_t RTObject_impl::on_shutdown(UniqueId ec_id)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     RTC_TRACE(("on_shutdown(%d)", ec_id));
     ReturnCode_t ret(RTC::RTC_ERROR);
@@ -925,7 +957,9 @@ namespace RTC
    * @endif
    */
   ReturnCode_t RTObject_impl::on_activated(UniqueId ec_id)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     RTC_TRACE(("on_activated(%d)", ec_id));
     ReturnCode_t ret(RTC::RTC_ERROR);
@@ -952,7 +986,9 @@ namespace RTC
    * @endif
    */
   ReturnCode_t RTObject_impl::on_deactivated(UniqueId ec_id)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     RTC_TRACE(("on_deactivated(%d)", ec_id));
     ReturnCode_t ret(RTC::RTC_ERROR);
@@ -978,7 +1014,9 @@ namespace RTC
    * @endif
    */
   ReturnCode_t RTObject_impl::on_aborting(UniqueId ec_id)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     RTC_TRACE(("on_aborting(%d)", ec_id));
     ReturnCode_t ret(RTC::RTC_ERROR);
@@ -1003,7 +1041,9 @@ namespace RTC
    * @endif
    */
   ReturnCode_t RTObject_impl::on_error(UniqueId ec_id)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     RTC_TRACE(("on_error(%d)", ec_id));
     ReturnCode_t ret(RTC::RTC_ERROR);
@@ -1029,7 +1069,9 @@ namespace RTC
    * @endif
    */
   ReturnCode_t RTObject_impl::on_reset(UniqueId ec_id)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     RTC_TRACE(("on_reset(%d)", ec_id));
     ReturnCode_t ret(RTC::RTC_ERROR);
@@ -1055,7 +1097,9 @@ namespace RTC
    * @endif
    */
   ReturnCode_t RTObject_impl::on_execute(UniqueId ec_id)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     RTC_PARANOID(("on_execute(%d)", ec_id));
     ReturnCode_t ret(RTC::RTC_ERROR);
@@ -1083,7 +1127,9 @@ namespace RTC
    * @endif
    */
   ReturnCode_t RTObject_impl::on_state_update(UniqueId ec_id)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     RTC_PARANOID(("on_state_update(%d)", ec_id));
     ReturnCode_t ret(RTC::RTC_ERROR);
@@ -1109,7 +1155,9 @@ namespace RTC
    * @endif
    */
   ReturnCode_t RTObject_impl::on_rate_changed(UniqueId ec_id)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     RTC_TRACE(("on_rate_changed(%d)", ec_id));
     ReturnCode_t ret(RTC::RTC_ERROR);
@@ -1137,8 +1185,10 @@ namespace RTC
    * @endif
    */
   SDOPackage::OrganizationList* RTObject_impl::get_owned_organizations()
+#if __cplusplus < 201703L
     throw (CORBA::SystemException,
            SDOPackage::NotAvailable, SDOPackage::InternalError)
+#endif
   {
     RTC_TRACE(("get_owned_organizations()"));
     try
@@ -1163,8 +1213,10 @@ namespace RTC
    * @endif
    */
   char* RTObject_impl::get_sdo_id()
+#if __cplusplus < 201703L
     throw (CORBA::SystemException,
            SDOPackage::NotAvailable, SDOPackage::InternalError)
+#endif
   {
     RTC_TRACE(("get_sdo_id()"));
     try
@@ -1187,8 +1239,10 @@ namespace RTC
    * @endif
    */
   char* RTObject_impl::get_sdo_type()
+#if __cplusplus < 201703L
     throw (CORBA::SystemException,
            SDOPackage::NotAvailable, SDOPackage::InternalError)
+#endif
   {
     RTC_TRACE(("get_sdo_type()"));
     CORBA::String_var sdo_type;
@@ -1213,8 +1267,10 @@ namespace RTC
    * @endif
    */
   SDOPackage::DeviceProfile* RTObject_impl::get_device_profile()
+#if __cplusplus < 201703L
     throw (CORBA::SystemException,
            SDOPackage::NotAvailable, SDOPackage::InternalError)
+#endif
   {
     RTC_TRACE(("get_device_profile()"));
     try
@@ -1242,8 +1298,10 @@ namespace RTC
    * @endif
    */
   SDOPackage::ServiceProfileList* RTObject_impl::get_service_profiles()
+#if __cplusplus < 201703L
     throw (CORBA::SystemException,
            SDOPackage::NotAvailable, SDOPackage::InternalError)
+#endif
   {
     RTC_TRACE(("get_service_profiles()"));
 
@@ -1270,9 +1328,11 @@ namespace RTC
    */
   SDOPackage::ServiceProfile*
   RTObject_impl::get_service_profile(const char* id)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException,
            SDOPackage::InvalidParameter, SDOPackage::NotAvailable,
            SDOPackage::InternalError)
+#endif
   {
     if (!id)
       {
@@ -1307,9 +1367,11 @@ namespace RTC
    * @endif
    */
   SDOPackage::SDOService_ptr RTObject_impl::get_sdo_service(const char* id)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException,
            SDOPackage::InvalidParameter, SDOPackage::NotAvailable,
            SDOPackage::InternalError)
+#endif
   {
     RTC_TRACE(("get_sdo_service(%s))", id));
     if (!id)
@@ -1341,9 +1403,11 @@ namespace RTC
    * @endif
    */
   SDOPackage::Configuration_ptr RTObject_impl::get_configuration()
+#if __cplusplus < 201703L
     throw (CORBA::SystemException,
            SDOPackage::InterfaceNotImplemented, SDOPackage::NotAvailable,
            SDOPackage::InternalError)
+#endif
   {
     RTC_TRACE(("get_configuration()"));
     if (m_pSdoConfig == NULL)
@@ -1375,9 +1439,11 @@ namespace RTC
    * @endif
    */
   SDOPackage::Monitoring_ptr RTObject_impl::get_monitoring()
+#if __cplusplus < 201703L
     throw (CORBA::SystemException,
            SDOPackage::InterfaceNotImplemented, SDOPackage::NotAvailable,
            SDOPackage::InternalError)
+#endif
   {
     RTC_TRACE(("get_monitoring()"));
     throw SDOPackage::InterfaceNotImplemented();
@@ -1392,8 +1458,10 @@ namespace RTC
    * @endif
    */
   SDOPackage::OrganizationList* RTObject_impl::get_organizations()
+#if __cplusplus < 201703L
     throw (CORBA::SystemException,
            SDOPackage::NotAvailable, SDOPackage::InternalError)
+#endif
   {
     RTC_TRACE(("get_organizations()"));
     m_sdoOrganizations = m_pSdoConfigImpl->getOrganizations();
@@ -1418,8 +1486,10 @@ namespace RTC
    * @endif
    */
   SDOPackage::NVList* RTObject_impl::get_status_list()
+#if __cplusplus < 201703L
     throw (CORBA::SystemException,
            SDOPackage::NotAvailable, SDOPackage::InternalError)
+#endif
   {
     RTC_TRACE(("get_status_list()"));
     try
@@ -1443,9 +1513,11 @@ namespace RTC
    * @endif
    */
   CORBA::Any* RTObject_impl::get_status(const char* name)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException,
            SDOPackage::InvalidParameter, SDOPackage::NotAvailable,
            SDOPackage::InternalError)
+#endif
   {
     RTC_TRACE(("get_status(%s)", name));
     CORBA::Long index;

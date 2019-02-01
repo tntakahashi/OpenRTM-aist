@@ -161,7 +161,9 @@ namespace RTC
    */
   ::RTC::PortStatus
       OutPortDSProvider::pull(::RTC::OctetSeq_out data)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     RTC_PARANOID(("OutPortDSProvider::get()"));
     // at least the output "data" area should be allocated

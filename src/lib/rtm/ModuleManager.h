@@ -350,7 +350,11 @@ namespace RTC
      * @endif
      */
     void* symbol(const std::string& file_name, const std::string& func_name)
+#if __cplusplus < 201703L
       throw (ModuleNotFound, SymbolNotFound);
+#else 
+    ;
+#endif
 
     /*!
      * @if jp

@@ -776,7 +776,11 @@ namespace RTC
      */
     virtual ReturnCode_t
     connect(ConnectorProfile& connector_profile)
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
 	/*!
 	* @if jp
@@ -1035,7 +1039,11 @@ namespace RTC
                                       OutPortProvider* provider);
 
     virtual ReturnCode_t notify_connect(ConnectorProfile& connector_profile)
+#if __cplusplus < 201703L
 		throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
 
   protected:

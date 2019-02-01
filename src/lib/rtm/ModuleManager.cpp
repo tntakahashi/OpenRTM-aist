@@ -227,7 +227,9 @@ namespace RTC
    */
   void* ModuleManager::symbol(const std::string& file_name,
                               const std::string& func_name)
+#if __cplusplus < 201703L
     throw (ModuleNotFound, SymbolNotFound)
+#endif
   {
     RTC_TRACE(("symbol(%s, %s)",
                file_name.c_str(), func_name.c_str()))

@@ -125,7 +125,11 @@ namespace RTC
      * @endif
      */
 	virtual void create_memory(::CORBA::ULongLong memory_size, const char *shm_address)
+#if __cplusplus < 201703L
     	throw (CORBA::SystemException);
+#else
+    ;
+#endif
      /*!
      * @if jp
      * @brief 共有メモリのマッピングを行う
@@ -144,7 +148,11 @@ namespace RTC
      * @endif
      */
 	virtual void open_memory(::CORBA::ULongLong memory_size, const char *shm_address)
+#if __cplusplus < 201703L
     	throw (CORBA::SystemException);
+#else
+    ;
+#endif
      /*!
      * @if jp
      * @brief マッピングした共有メモリをアンマップする
@@ -159,7 +167,11 @@ namespace RTC
      * @endif
      */
 	virtual void close_memory(::CORBA::Boolean unlink = false)
+#if __cplusplus < 201703L
     	throw (CORBA::SystemException);
+#else
+    ;
+#endif
      /*!
      * @if jp
      * @brief データを書き込む
@@ -210,7 +222,11 @@ namespace RTC
      * @endif
      */
 	virtual void setInterface(::OpenRTM::PortSharedMemory_ptr sm)
+#if __cplusplus < 201703L
     	throw (CORBA::SystemException);
+#else
+    ;
+#endif
      /*!
      * @if jp
      * @brief エンディアンを設定する
@@ -227,7 +243,11 @@ namespace RTC
      * @endif
      */
 	virtual void setEndian(::CORBA::Boolean endian)
+#if __cplusplus < 201703L
     	throw (CORBA::SystemException);
+#else
+    ;
+#endif
      /*!
      * @if jp
      * @brief データの送信を知らせる
@@ -244,7 +264,11 @@ namespace RTC
      * @endif
      */
     virtual ::OpenRTM::PortStatus put()
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
      /*!
      * @if jp
      * @brief データの送信を要求する
@@ -261,7 +285,11 @@ namespace RTC
      * @endif
      */
     virtual ::OpenRTM::PortStatus get()
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
 	virtual ::OpenRTM::PortSharedMemory_ptr getObjRef();
 

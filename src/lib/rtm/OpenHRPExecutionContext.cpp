@@ -70,7 +70,9 @@ namespace RTC
    * @endif
    */
   void OpenHRPExecutionContext::tick()
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     RTC_TRACE(("tick()"));
     if (!isRunning()) { return; }
@@ -119,7 +121,9 @@ namespace RTC
    * @endif
    */
   CORBA::Boolean OpenHRPExecutionContext::is_running()
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     return ExecutionContextBase::isRunning();
   }
@@ -132,7 +136,9 @@ namespace RTC
    * @endif
    */
   RTC::ReturnCode_t OpenHRPExecutionContext::start()
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     return ExecutionContextBase::start();
   }
@@ -145,7 +151,9 @@ namespace RTC
    * @endif
    */
   RTC::ReturnCode_t OpenHRPExecutionContext::stop()
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     return ExecutionContextBase::stop();
   }
@@ -160,7 +168,9 @@ namespace RTC
    * @endif
    */
   CORBA::Double OpenHRPExecutionContext::get_rate()
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     return ExecutionContextBase::getRate();
   }
@@ -173,7 +183,9 @@ namespace RTC
    * @endif
    */
   RTC::ReturnCode_t OpenHRPExecutionContext::set_rate(CORBA::Double rate)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     return ExecutionContextBase::setRate(rate);
   }
@@ -187,7 +199,9 @@ namespace RTC
    */
   RTC::ReturnCode_t
   OpenHRPExecutionContext::add_component(RTC::LightweightRTObject_ptr comp)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     return ExecutionContextBase::addComponent(comp);
   }
@@ -201,7 +215,9 @@ namespace RTC
    */
   RTC::ReturnCode_t OpenHRPExecutionContext::
   remove_component(RTC::LightweightRTObject_ptr comp)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     return ExecutionContextBase::removeComponent(comp);
   }
@@ -215,7 +231,9 @@ namespace RTC
    */
   RTC::ReturnCode_t OpenHRPExecutionContext::
   activate_component(RTC::LightweightRTObject_ptr comp)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     return ExecutionContextBase::activateComponent(comp);
   }
@@ -229,7 +247,9 @@ namespace RTC
    */
   RTC::ReturnCode_t OpenHRPExecutionContext::
   deactivate_component(RTC::LightweightRTObject_ptr comp)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     return ExecutionContextBase::deactivateComponent(comp);
   }
@@ -243,7 +263,9 @@ namespace RTC
    */
   RTC::ReturnCode_t OpenHRPExecutionContext::
   reset_component(RTC::LightweightRTObject_ptr comp)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     return ExecutionContextBase::resetComponent(comp);
   }
@@ -257,7 +279,9 @@ namespace RTC
    */
   RTC::LifeCycleState OpenHRPExecutionContext::
   get_component_state(RTC::LightweightRTObject_ptr comp)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     return ExecutionContextBase::getComponentState(comp);
   }
@@ -270,7 +294,9 @@ namespace RTC
    * @endif
    */
   RTC::ExecutionKind OpenHRPExecutionContext::get_kind()
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     return ExecutionContextBase::getKind();
   }
@@ -286,7 +312,9 @@ namespace RTC
    * @endif
    */
   RTC::ExecutionContextProfile* OpenHRPExecutionContext::get_profile()
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     return ExecutionContextBase::getProfile();
   }

@@ -178,7 +178,9 @@ namespace RTC
    * @endif
    */
   void ExtTrigExecutionContext::tick()
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     RTC_TRACE(("tick()"));
     if (!isRunning())
@@ -204,7 +206,9 @@ namespace RTC
    * @endif
    */
   CORBA::Boolean ExtTrigExecutionContext::is_running()
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     return ExecutionContextBase::isRunning();
   }
@@ -217,7 +221,9 @@ namespace RTC
    * @endif
    */
   RTC::ReturnCode_t ExtTrigExecutionContext::start()
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     return ExecutionContextBase::start();
   }
@@ -230,7 +236,9 @@ namespace RTC
    * @endif
    */
   RTC::ReturnCode_t ExtTrigExecutionContext::stop()
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     return ExecutionContextBase::stop();
   }
@@ -245,7 +253,9 @@ namespace RTC
    * @endif
    */
   CORBA::Double ExtTrigExecutionContext::get_rate()
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     return ExecutionContextBase::getRate();
   }
@@ -258,7 +268,9 @@ namespace RTC
    * @endif
    */
   RTC::ReturnCode_t ExtTrigExecutionContext::set_rate(CORBA::Double rate)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     return ExecutionContextBase::setRate(rate);
   }
@@ -272,7 +284,9 @@ namespace RTC
    */
   RTC::ReturnCode_t
   ExtTrigExecutionContext::add_component(RTC::LightweightRTObject_ptr comp)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     return ExecutionContextBase::addComponent(comp);
   }
@@ -286,7 +300,9 @@ namespace RTC
    */
   RTC::ReturnCode_t ExtTrigExecutionContext::
   remove_component(RTC::LightweightRTObject_ptr comp)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     return ExecutionContextBase::removeComponent(comp);
   }
@@ -300,7 +316,9 @@ namespace RTC
    */
   RTC::ReturnCode_t ExtTrigExecutionContext::
   activate_component(RTC::LightweightRTObject_ptr comp)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     return ExecutionContextBase::activateComponent(comp);
   }
@@ -314,7 +332,9 @@ namespace RTC
    */
   RTC::ReturnCode_t ExtTrigExecutionContext::
   deactivate_component(RTC::LightweightRTObject_ptr comp)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     return ExecutionContextBase::deactivateComponent(comp);
   }
@@ -328,7 +348,9 @@ namespace RTC
    */
   RTC::ReturnCode_t ExtTrigExecutionContext::
   reset_component(RTC::LightweightRTObject_ptr comp)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     return ExecutionContextBase::resetComponent(comp);
   }
@@ -342,7 +364,9 @@ namespace RTC
    */
   RTC::LifeCycleState ExtTrigExecutionContext::
   get_component_state(RTC::LightweightRTObject_ptr comp)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     return ExecutionContextBase::getComponentState(comp);
   }
@@ -355,7 +379,9 @@ namespace RTC
    * @endif
    */
   RTC::ExecutionKind ExtTrigExecutionContext::get_kind()
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     return ExecutionContextBase::getKind();
   }
@@ -371,7 +397,9 @@ namespace RTC
    * @endif
    */
   RTC::ExecutionContextProfile* ExtTrigExecutionContext::get_profile()
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     return ExecutionContextBase::getProfile();
   }

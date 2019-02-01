@@ -29,15 +29,35 @@ class MyServiceSVC_impl
 
    // attributes and operations
    char* echo(const char* msg)
+#if __cplusplus < 201703L
      throw (CORBA::SystemException);
+#else
+  ;
+#endif
   SimpleService::EchoList* get_echo_history()
+#if __cplusplus < 201703L
      throw (CORBA::SystemException);
+#else
+  ;
+#endif
    void set_value(CORBA::Float value)
+#if __cplusplus < 201703L
      throw (CORBA::SystemException);
+#else
+  ;
+#endif
    CORBA::Float get_value()
+#if __cplusplus < 201703L
      throw (CORBA::SystemException);
+#else
+  ;
+#endif
   SimpleService::ValueList* get_value_history()
+#if __cplusplus < 201703L
      throw (CORBA::SystemException);
+#else
+  ;
+#endif
 
 private:
   CORBA::Float m_value;

@@ -129,8 +129,12 @@ namespace SDOPackage
      * @endif
      */
     virtual ::CORBA::Boolean add_members(const SDOList& sdo_list)
+#if __cplusplus < 201703L
       throw (::CORBA::SystemException,
              InvalidParameter, NotAvailable, InternalError);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -156,8 +160,12 @@ namespace SDOPackage
      * @endif
      */
     virtual ::CORBA::Boolean set_members(const SDOList& sdos)
+#if __cplusplus < 201703L
       throw (::CORBA::SystemException,
              InvalidParameter, NotAvailable, InternalError);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -181,8 +189,12 @@ namespace SDOPackage
      * @endif
      */
     virtual ::CORBA::Boolean remove_member(const char* id)
+#if __cplusplus < 201703L
       throw (::CORBA::SystemException,
              InvalidParameter, NotAvailable, InternalError);
+#else
+    ;
+#endif
 
     /*!
      * @if jp
@@ -646,7 +658,11 @@ namespace RTC
     virtual ReturnCode_t onFinalize(void);
 
     virtual ReturnCode_t exit()
+#if __cplusplus < 201703L
       throw (CORBA::SystemException);
+#else
+    ;
+#endif
 
   protected:
     /*!

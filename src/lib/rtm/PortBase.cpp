@@ -108,7 +108,9 @@ namespace RTC
    * @endif
    */
   PortProfile* PortBase::get_port_profile()
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     RTC_TRACE(("get_port_profile()"));
 
@@ -141,7 +143,9 @@ namespace RTC
    * @endif
    */
   ConnectorProfileList* PortBase::get_connector_profiles()
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     RTC_TRACE(("get_connector_profiles()"));
 
@@ -161,7 +165,9 @@ namespace RTC
    * @endif
    */
   ConnectorProfile* PortBase::get_connector_profile(const char* connector_id)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     RTC_TRACE(("get_connector_profile(%s)", connector_id));
 
@@ -189,7 +195,9 @@ namespace RTC
    * @endif
    */
   ReturnCode_t PortBase::connect(ConnectorProfile& connector_profile)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     RTC_TRACE(("connect()"));
     if (isEmptyId(connector_profile))
@@ -237,7 +245,9 @@ namespace RTC
    * @endif
    */
   ReturnCode_t PortBase::notify_connect(ConnectorProfile& connector_profile)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     RTC_TRACE(("notify_connect()"));
     Guard guard(m_connectorsMutex);
@@ -372,7 +382,9 @@ namespace RTC
    * @endif
    */
   ReturnCode_t PortBase::disconnect(const char* connector_id)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     RTC_TRACE(("disconnect(%s)", connector_id));
 
@@ -433,7 +445,9 @@ namespace RTC
    * @endif
    */
   ReturnCode_t PortBase::notify_disconnect(const char* connector_id)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     RTC_TRACE(("notify_disconnect(%s)", connector_id));
     Guard guard(m_connectorsMutex);
@@ -491,7 +505,9 @@ namespace RTC
    * @endif
    */
   ReturnCode_t PortBase::disconnect_all()
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
     RTC_TRACE(("disconnect_all()"));
 

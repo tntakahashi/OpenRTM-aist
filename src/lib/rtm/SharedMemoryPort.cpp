@@ -159,7 +159,9 @@ namespace RTC
   * @endif
   */
 	void SharedMemoryPort::create_memory(::CORBA::ULongLong memory_size, const char *shm_address)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
 	  if (!m_shmem.created())
 	  {
@@ -192,7 +194,9 @@ namespace RTC
   * @endif
   */
 	void SharedMemoryPort::open_memory(::CORBA::ULongLong memory_size, const char * shm_address)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
 	  
 	  m_shmem.open(shm_address, memory_size);
@@ -213,7 +217,9 @@ namespace RTC
   * @endif
   */
 	void SharedMemoryPort::close_memory(::CORBA::Boolean unlink)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
 	  if (!m_shmem.created())
 	  {
@@ -377,7 +383,9 @@ namespace RTC
   * @endif
   */
 	void SharedMemoryPort::setInterface(::OpenRTM::PortSharedMemory_ptr sm)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
 	  m_smInterface = ::OpenRTM::PortSharedMemory::_narrow(sm);
   }
@@ -397,7 +405,9 @@ namespace RTC
   * @endif
   */
 	void SharedMemoryPort::setEndian(::CORBA::Boolean endian)
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
 	  m_endian = endian;
 	  if (!CORBA::is_nil(m_smInterface))
@@ -428,7 +438,9 @@ namespace RTC
   * @endif
   */
 	::OpenRTM::PortStatus SharedMemoryPort::put()
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
 	  return ::OpenRTM::PORT_OK;
   }
@@ -448,7 +460,9 @@ namespace RTC
   * @endif
   */
 	::OpenRTM::PortStatus SharedMemoryPort::get()
+#if __cplusplus < 201703L
     throw (CORBA::SystemException)
+#endif
   {
 	  return ::OpenRTM::PORT_OK;
   }

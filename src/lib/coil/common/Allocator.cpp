@@ -29,7 +29,11 @@ namespace coil
    * @brief Create of memory allocation
    * @endif
    */
+#if __cplusplus < 201703L
   void* Allocator::New(size_t t) throw (std::bad_alloc)
+#else
+  void* Allocator::New(size_t t)
+#endif
   {
     return operator new(t);
   }
@@ -41,7 +45,11 @@ namespace coil
    * @brief Delete of memory allocation
    * @endif
    */
+#if __cplusplus < 201703L
   void Allocator::Delete(void* p) throw ()
+#else
+  void Allocator::Delete(void* p) noexcept
+#endif
   {
     operator delete(p);
   }
@@ -53,7 +61,11 @@ namespace coil
    * @brief Create of array memory allocation
    * @endif
    */
+#if __cplusplus < 201703L
   void* Allocator::NewArray(size_t t) throw (std::bad_alloc)
+#else
+  void* Allocator::NewArray(size_t t)
+#endif
   {
     return operator new[](t);
   }
@@ -65,7 +77,11 @@ namespace coil
    * @brief Delete of array memory allocation
    * @endif
    */
+#if __cplusplus < 201703L
   void Allocator::DeleteArray(void* p) throw ()
+#else
+  void Allocator::DeleteArray(void* p) noexcept
+#endif
   {
     operator delete[](p);
   }
